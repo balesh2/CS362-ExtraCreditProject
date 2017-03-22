@@ -48,9 +48,9 @@
 This is my documentation of testing an input generation tool on an Open Source Java project. 
 The project that I have selected is Commons-cli. I will provide a description of this project and a 
 link to the project's webpage below. I will test this project using a test input generation tool 
-called jCute. Further evalutation of this tool will also be included in this document. I will 
-evaluate the code coverage of these generated tests in order to judge the effectiveness of jCute. 
-Finally, I will evaluate jCute by inserting five faults in the commons-cli project and running the 
+called AVMf. Further evalutation of this tool will also be included in this document. I will 
+evaluate the code coverage of these generated tests in order to judge the effectiveness of AVMf. 
+Finally, I will evaluate AVMf by inserting five faults in the commons-cli project and running the 
 tests to see if the faults are caught.
 
 \section{Selection of Open Source Java Project}
@@ -82,62 +82,114 @@ inserting faults into the code to see if the tests catch them.
 \section{Using the Input Generation Tool}
 	\subsection{Generated Tests}
 		\subsubsection{Class 1 - Option}
-		\input{}
+		\textbf{Command: }
+		\begin{lstlisting}
+		java -cp target/avmf-1.0-jar-with-dependencies.jar org.avmframework.examples.GenerateInputData Option 1T
+		\end{lstlisting}
+
+		\textbf{Output: }
+		\begin{lstlisting}
+		ERROR: Unable to instantiate test object "Option"
+		USAGE: java class org.avmframework.examples.GenerateInputData testobject branch [search] 
+		where: 
+		- testobject is a test object to generate data for (e.g., "Calendar", "Line" or "Triangle")
+		- branch is a branch ID of the form X(T|F) where X is a branching node number (e.g., "5T")
+		- [search] is an optional parameter denoting which search to use (e.g., "IteratedPatternSearch", "GeometricSearch" or "LatticeSearch")
+		\end{lstlisting}
 
 		\subsubsection{Class 2 - OptionValidator}
-		\input{}
+		\textbf{Command: }
+		\begin{lstlisting}
+		java -cp target/avmf-1.0-jar-with-dependencies.jar org.avmframework.examples.GenerateInputData OptionValidator 1T
+		\end{lstlisting}
+
+		\textbf{Output: }
+		\begin{lstlisting}
+		ERROR: Unable to instantiate test object "OptionValidator"
+		USAGE: java class org.avmframework.examples.GenerateInputData testobject branch [search] 
+		where: 
+		- testobject is a test object to generate data for (e.g., "Calendar", "Line" or "Triangle")
+		- branch is a branch ID of the form X(T|F) where X is a branching node number (e.g., "5T")
+		- [search] is an optional parameter denoting which search to use (e.g., "IteratedPatternSearch", "GeometricSearch" or "LatticeSearch")
+		\end{lstlisting}
 
 		\subsubsection{Class 3 - GnuParser}
-		\input{}
+		\textbf{Command: }
+		\begin{lstlisting}
+		java -cp target/avmf-1.0-jar-with-dependencies.jar org.avmframework.examples.GenerateInputData GnuParser 1T
+		\end{lstlisting}
+
+		\textbf{Output: }
+		\begin{lstlisting}
+		ERROR: Unable to instantiate test object "GnuParser"
+		USAGE: java class org.avmframework.examples.GenerateInputData testobject branch [search] 
+		where: 
+		- testobject is a test object to generate data for (e.g., "Calendar", "Line" or "Triangle")
+		- branch is a branch ID of the form X(T|F) where X is a branching node number (e.g., "5T")
+		- [search] is an optional parameter denoting which search to use (e.g., "IteratedPatternSearch", "GeometricSearch" or "LatticeSearch")
+		\end{lstlisting}
 
 		\subsubsection{Class 4 - CommandLine}
-		\input{}
+		\textbf{Command: }
+		\begin{lstlisting}
+		java -cp target/avmf-1.0-jar-with-dependencies.jar org.avmframework.examples.GenerateInputData CommandLine 1T
+		\end{lstlisting}
+
+		\textbf{Output: }
+		\begin{lstlisting}
+		ERROR: Unable to instantiate test object "CommandLine"
+		USAGE: java class org.avmframework.examples.GenerateInputData testobject branch [search] 
+		where: 
+		- testobject is a test object to generate data for (e.g., "Calendar", "Line" or "Triangle")
+		- branch is a branch ID of the form X(T|F) where X is a branching node number (e.g., "5T")
+		- [search] is an optional parameter denoting which search to use (e.g., "IteratedPatternSearch", "GeometricSearch" or "LatticeSearch")
+		\end{lstlisting}
+
 	\subsection{Evaluation of Selected Input Generation Tool}
-		\subsubsection{Provided Functionality}
+	I have selected to use AVMf as my Input Generation Tool. AVMf is a framework and Java 
+	implementation of the AVM heuristic local search algorithm. The project's source is 
+	available on Github.
 		\subsubsection{Implementation Details}
+		AVMf is a Java and Maven project. AVMf implements the Alternating Variable Method 
+		in a Java framework for use in test generation. AVM is a heuristic local search 
+		algorithm and was first applied to test data generation in 1990.
 		\subsubsection{Effective Functionality}
+		The build process for this tool is very straightforward and easy to use. I was 
+		able to follow the Eclipse installation instructions with no issues.
+
+		Running the examples was also a very easy process. The instructions for how to set
+		 up AVMf and run the examples all flowed together very easily for a smooth 
+		introduction to the tool.
 		\subsubsection{Ineffective Functionality}
+		After running the examples, there is no instruction on where to go from there. It 
+		says in the README that the examples show how to apply the GenerateInputData to 
+		other classes, but when I try to run AVMf on other classes, it fails every time.
+
 		\subsubsection{Tool Use Cases}
+		This tool is effective for use with Maven projects in Eclipse because it is very 
+		easy to install using Maven and Eclipse. It is used to generate test data.
 		\subsubsection{Suggested Possible Improvements}
+		In order to make this tool useable I would suggest adding a walkthrough on how to 
+		add another class and generate test data for that added class. I feel that the 
+		examples alone, without a walkthrough for adding a new class, do not describe how
+		 to use this tool fully.
+
+		Since I was not able to get this tool to run on my classes, I am not able to 
+		comment on other possible improvements.
 	\subsection{Coverage of Generated Test Inputs}
-		\subsubsection{Coverage Data}
-		\subsubsection{Evaluation of Code Coverage}
+	I am unable to evaluate the coverage of the test generated by AVMf since AVMf failed to 
+	generate any tests for the selected project and classes.
 \section{Fault Insertion}
-	\subsection{Fault 1}
-		\subsubsection{Fault Description}
-		\textbf{Class Name: } \\
-		\textbf{Line Number: } \\
-		\textbf{Description of Change: } \\
-		\subsubsection{Status of Test Detection}
-		\textbf{Test Case: } \\
-	\subsection{Fault 2}
-		\subsubsection{Fault Description}
-		\textbf{Class Name: } \\
-		\textbf{Line Number: } \\
-		\textbf{Description of Change: } \\
-		\subsubsection{Status of Test Detection}
-		\textbf{Test Case: } \\
-	\subsection{Fault 3}
-		\subsubsection{Fault Description}
-		\textbf{Class Name: } \\
-		\textbf{Line Number: } \\
-		\textbf{Description of Change: } \\
-		\subsubsection{Status of Test Detection}
-		\textbf{Test Case: } \\
-	\subsection{Fault 4}
-		\subsubsection{Fault Description}
-		\textbf{Class Name: } \\
-		\textbf{Line Number: } \\
-		\textbf{Description of Change: } \\
-		\subsubsection{Status of Test Detection}
-		\textbf{Test Case: } \\
-	\subsection{Fault 5}
-		\subsubsection{Fault Description}
-		\textbf{Class Name: } \\
-		\textbf{Line Number: } \\
-		\textbf{Description of Change: } \\
-		\subsubsection{Status of Test Detection}
-		\textbf{Test Case: } \\
+I was also not able to test the output of AVMf by inserting faults in the project since there is 
+no output of AVMf to test.
 
 \section{Conclusion}
+I had significant difficulties with this assignment. I attempted to install and use all four of 
+the tools linked to in the assignment statement. After successfully installing AVMf, I read all 
+documentation that I could find on the subject. Most of it was simply repeating the User's Guide, 
+but despite this I was eventually able to figure out where to put my classes from commons-cli to 
+test them. I was not able to get the tool to run on any of my classes, only on the example 
+classes given in the AVMf source code. Given documentation on how to run AVMf on a new class, 
+other than those provided in the source code, I feel that I would have had no trouble with this 
+project.
 \end{document}
