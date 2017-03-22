@@ -46,52 +46,51 @@
 
 \section{Introduction}
 This is my documentation of testing an input generation tool on an Open Source Java project. 
-The project that I have selected is NanoXML. I will provide a description of this project and a 
+The project that I have selected is Commons-cli. I will provide a description of this project and a 
 link to the project's webpage below. I will test this project using a test input generation tool 
 called jCute. Further evalutation of this tool will also be included in this document. I will 
 evaluate the code coverage of these generated tests in order to judge the effectiveness of jCute. 
-Finally, I will evaluate jCute by inserting five faults in the NanoXML project and running the 
+Finally, I will evaluate jCute by inserting five faults in the commons-cli project and running the 
 tests to see if the faults are caught.
 
 \section{Selection of Open Source Java Project}
-The project that I have selected to test is NanoXML. The project's source code is available at: 
+The project that I have selected to test is Commons-cli. The project's source code is available at: 
 \begin{lstlisting}
-http://nanoxml.sourceforge.net/orig/download.html
+https://commons.apache.org/proper/commons-cli/download_cli.cgi
 \end{lstlisting}
 
 	\subsection{Project Details}
-	NanoXML is a "small non-validating parser for Java", according to the NanoXML "About" 
-	page. I will be using the NanoXML-Java branch, which is the standard branch that is 
-	recommended for most users. It is structured as a selection of classes in a source tree. 
-	I will be using the most recent version of NanoXML, version 2.2.1.
-
+	The Apache Commons-cli is an API for parsing command line arguments. It is developed and 
+	supported by the Apache Foundation. It provides support for many different types of 
+	command line arguments. I will be using this project to gain familiarity with the 
+	selected Test Generation Tool.
 	\subsection{Classes to Test}
 	I will be testing the following four classes:
 	\begin{enumerate}
-		\item{public class StdXMLReader}
-		\item{class PIReader}
-		\item{public class XMLElement}
-		\item{public class XMLException}
+		\item{Option}
+		\item{OptionValidator}
+		\item{GnuParser}
+		\item{CommandLine}
 	\end{enumerate}
 
 \section{Selection of Input Generation Tool}
-I have selected to use jCute as my Input Generation Tool to test. jCute is a Concolic Unit Testing
- Engine that automatically generates unit tests for Java programs. I will evaluate this tool by 
-generating tests for NanoXML, then evaluating the code coverage of those tests, and inserting 
-faults into the code to see if the tests catch them.
+I have selected to use AVMf as my Input Generation Tool to test. AVMf is a Java framework for AVM.
+ It automatically generates unit tests for Java programs. I will evaluate this tool by 
+generating tests for Apache Commons-cli, then evaluating the code coverage of those tests, and 
+inserting faults into the code to see if the tests catch them.
 
 \section{Using the Input Generation Tool}
 	\subsection{Generated Tests}
-		\subsubsection{Class 1}
+		\subsubsection{Class 1 - Option}
 		\input{}
 
-		\subsubsection{Class 2}
+		\subsubsection{Class 2 - OptionValidator}
 		\input{}
 
-		\subsubsection{Class 3}
+		\subsubsection{Class 3 - GnuParser}
 		\input{}
 
-		\subsubsection{Class 4}
+		\subsubsection{Class 4 - CommandLine}
 		\input{}
 	\subsection{Evaluation of Selected Input Generation Tool}
 		\subsubsection{Provided Functionality}
